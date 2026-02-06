@@ -1,0 +1,27 @@
+name: Sisam Kafle Workflow
+
+on:
+  push:
+    branches: [ main ]
+ 
+
+jobs:
+  run-actions:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'
+    
+    - name: Action 1 - Run Script
+      run: python sisamdemo.py
+    
+    - name: Action 2 - Show Info
+      run: |
+        echo "Author: Sisam Kafle"
+        echo "Date: $(date)"
+        
